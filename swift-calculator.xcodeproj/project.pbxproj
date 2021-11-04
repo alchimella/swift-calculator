@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		627C27752733A94900FE5F31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627C27742733A94900FE5F31 /* AppDelegate.swift */; };
 		627C27772733A94900FE5F31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627C27762733A94900FE5F31 /* SceneDelegate.swift */; };
-		627C27792733A94900FE5F31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627C27782733A94900FE5F31 /* ViewController.swift */; };
-		627C277C2733A94900FE5F31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 627C277A2733A94900FE5F31 /* Main.storyboard */; };
+		627C27792733A94900FE5F31 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627C27782733A94900FE5F31 /* AuthViewController.swift */; };
+		627C277C2733A94900FE5F31 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 627C277A2733A94900FE5F31 /* Auth.storyboard */; };
 		627C277E2733A94D00FE5F31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 627C277D2733A94D00FE5F31 /* Assets.xcassets */; };
 		627C27812733A94D00FE5F31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 627C277F2733A94D00FE5F31 /* LaunchScreen.storyboard */; };
 		627C278C2733A94E00FE5F31 /* swift_calculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627C278B2733A94E00FE5F31 /* swift_calculatorTests.swift */; };
 		627C27972733A94E00FE5F31 /* swift_calculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627C27962733A94E00FE5F31 /* swift_calculatorUITests.swift */; };
+		627C27B32733AE6100FE5F31 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627C27B22733AE6100FE5F31 /* AuthModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +39,8 @@
 		627C27712733A94900FE5F31 /* swift-calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		627C27742733A94900FE5F31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		627C27762733A94900FE5F31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		627C27782733A94900FE5F31 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		627C277B2733A94900FE5F31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		627C27782733A94900FE5F31 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		627C277B2733A94900FE5F31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
 		627C277D2733A94D00FE5F31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		627C27802733A94D00FE5F31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		627C27822733A94D00FE5F31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		627C27922733A94E00FE5F31 /* swift-calculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-calculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		627C27962733A94E00FE5F31 /* swift_calculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_calculatorUITests.swift; sourceTree = "<group>"; };
 		627C27982733A94E00FE5F31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		627C27B22733AE6100FE5F31 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +101,11 @@
 		627C27732733A94900FE5F31 /* swift-calculator */ = {
 			isa = PBXGroup;
 			children = (
-				627C27742733A94900FE5F31 /* AppDelegate.swift */,
-				627C27762733A94900FE5F31 /* SceneDelegate.swift */,
-				627C27782733A94900FE5F31 /* ViewController.swift */,
-				627C277A2733A94900FE5F31 /* Main.storyboard */,
-				627C277D2733A94D00FE5F31 /* Assets.xcassets */,
-				627C277F2733A94D00FE5F31 /* LaunchScreen.storyboard */,
-				627C27822733A94D00FE5F31 /* Info.plist */,
+				627C27A52733ACC800FE5F31 /* Application */,
+				627C27A62733ACD300FE5F31 /* Auth */,
+				627C27A72733ACDC00FE5F31 /* Calculator */,
+				627C27A42733ACBA00FE5F31 /* Services */,
+				627C27A82733AD3700FE5F31 /* SupportingFiles */,
 			);
 			path = "swift-calculator";
 			sourceTree = "<group>";
@@ -126,6 +126,121 @@
 				627C27982733A94E00FE5F31 /* Info.plist */,
 			);
 			path = "swift-calculatorUITests";
+			sourceTree = "<group>";
+		};
+		627C27A42733ACBA00FE5F31 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		627C27A52733ACC800FE5F31 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				627C27AB2733AD7600FE5F31 /* Model */,
+				627C27AA2733AD7100FE5F31 /* View */,
+				627C27A92733AD6300FE5F31 /* Controller */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		627C27A62733ACD300FE5F31 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				627C27AE2733AD8900FE5F31 /* Model */,
+				627C27AD2733AD8500FE5F31 /* View */,
+				627C27AC2733AD7E00FE5F31 /* Controller */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		627C27A72733ACDC00FE5F31 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				627C27B12733AD9C00FE5F31 /* Model */,
+				627C27B02733AD9600FE5F31 /* View */,
+				627C27AF2733AD9000FE5F31 /* Controller */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		627C27A82733AD3700FE5F31 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				627C277D2733A94D00FE5F31 /* Assets.xcassets */,
+				627C27822733A94D00FE5F31 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		627C27A92733AD6300FE5F31 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				627C27742733A94900FE5F31 /* AppDelegate.swift */,
+				627C27762733A94900FE5F31 /* SceneDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		627C27AA2733AD7100FE5F31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				627C277F2733A94D00FE5F31 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		627C27AB2733AD7600FE5F31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		627C27AC2733AD7E00FE5F31 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				627C27782733A94900FE5F31 /* AuthViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		627C27AD2733AD8500FE5F31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				627C277A2733A94900FE5F31 /* Auth.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		627C27AE2733AD8900FE5F31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				627C27B22733AE6100FE5F31 /* AuthModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		627C27AF2733AD9000FE5F31 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		627C27B02733AD9600FE5F31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		627C27B12733AD9C00FE5F31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +348,7 @@
 			files = (
 				627C27812733A94D00FE5F31 /* LaunchScreen.storyboard in Resources */,
 				627C277E2733A94D00FE5F31 /* Assets.xcassets in Resources */,
-				627C277C2733A94900FE5F31 /* Main.storyboard in Resources */,
+				627C277C2733A94900FE5F31 /* Auth.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +373,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				627C27792733A94900FE5F31 /* ViewController.swift in Sources */,
+				627C27792733A94900FE5F31 /* AuthViewController.swift in Sources */,
+				627C27B32733AE6100FE5F31 /* AuthModel.swift in Sources */,
 				627C27752733A94900FE5F31 /* AppDelegate.swift in Sources */,
 				627C27772733A94900FE5F31 /* SceneDelegate.swift in Sources */,
 			);
@@ -296,12 +412,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		627C277A2733A94900FE5F31 /* Main.storyboard */ = {
+		627C277A2733A94900FE5F31 /* Auth.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				627C277B2733A94900FE5F31 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Auth.storyboard;
 			sourceTree = "<group>";
 		};
 		627C277F2733A94D00FE5F31 /* LaunchScreen.storyboard */ = {
@@ -438,7 +554,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SKYF4SX75K;
-				INFOPLIST_FILE = "swift-calculator/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/swift-calculator/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,7 +573,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SKYF4SX75K;
-				INFOPLIST_FILE = "swift-calculator/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/swift-calculator/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
