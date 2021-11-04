@@ -2,6 +2,7 @@ platform :ios, '9.0'
 
 def shared_pods
     pod 'FBSDKLoginKit'
+    pod 'GoogleSignIn'
 end
 
 target 'swift-calculator' do

@@ -17,6 +17,7 @@
 		627C27972733A94E00FE5F31 /* swift_calculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627C27962733A94E00FE5F31 /* swift_calculatorUITests.swift */; };
 		627C27B32733AE6100FE5F31 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627C27B22733AE6100FE5F31 /* AuthModel.swift */; };
 		627C27B42733DE7600FE5F31 /* Pods_swift_calculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4848EDF6CB28B2A5F86E87 /* Pods_swift_calculator.framework */; };
+		627C27B82734351300FE5F31 /* client_84117475166-h91t1926toh8e5dt7inivcob42rp7f8d.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 627C27B72734351300FE5F31 /* client_84117475166-h91t1926toh8e5dt7inivcob42rp7f8d.apps.googleusercontent.com.plist */; };
 		87C7FB8D318BF4E37339FA58 /* Pods_swift_calculator_swift_calculatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501379584CD0A8650D8C74B1 /* Pods_swift_calculator_swift_calculatorUITests.framework */; };
 		E550DAA12B56FC9841854E71 /* Pods_swift_calculatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26D4FBEAB31894D6F156DBE /* Pods_swift_calculatorTests.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		627C27962733A94E00FE5F31 /* swift_calculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_calculatorUITests.swift; sourceTree = "<group>"; };
 		627C27982733A94E00FE5F31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		627C27B22733AE6100FE5F31 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		627C27B72734351300FE5F31 /* client_84117475166-h91t1926toh8e5dt7inivcob42rp7f8d.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "client_84117475166-h91t1926toh8e5dt7inivcob42rp7f8d.apps.googleusercontent.com.plist"; path = "../../../../../Downloads/client_84117475166-h91t1926toh8e5dt7inivcob42rp7f8d.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
 		908D184778EAB8F4E2C3A3C9 /* Pods-swift-calculatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-calculatorTests.release.xcconfig"; path = "Target Support Files/Pods-swift-calculatorTests/Pods-swift-calculatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		A26D4FBEAB31894D6F156DBE /* Pods_swift_calculatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_calculatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6C4D8C712E9BB4411D027F /* Pods-swift-calculator-swift-calculatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-calculator-swift-calculatorUITests.debug.xcconfig"; path = "Target Support Files/Pods-swift-calculator-swift-calculatorUITests/Pods-swift-calculator-swift-calculatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				627C277D2733A94D00FE5F31 /* Assets.xcassets */,
+				627C27B72734351300FE5F31 /* client_84117475166-h91t1926toh8e5dt7inivcob42rp7f8d.apps.googleusercontent.com.plist */,
 				627C27822733A94D00FE5F31 /* Info.plist */,
 			);
 			path = SupportingFiles;
@@ -393,6 +396,7 @@
 			files = (
 				627C27812733A94D00FE5F31 /* LaunchScreen.storyboard in Resources */,
 				627C277E2733A94D00FE5F31 /* Assets.xcassets in Resources */,
+				627C27B82734351300FE5F31 /* client_84117475166-h91t1926toh8e5dt7inivcob42rp7f8d.apps.googleusercontent.com.plist in Resources */,
 				627C277C2733A94900FE5F31 /* Auth.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
