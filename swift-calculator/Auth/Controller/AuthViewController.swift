@@ -6,14 +6,19 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class AuthViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        let loginButton = FBLoginButton()
+        loginButton.center = view.center
+        view.addSubview(loginButton)
+        
+        if let token = AccessToken.current, !token.isExpired {
+            print("TOKEN", token)
+        }
     }
-
-
 }
-
