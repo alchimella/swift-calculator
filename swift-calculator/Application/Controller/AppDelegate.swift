@@ -11,10 +11,9 @@ import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    var window: UIWindow!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        let signInConfig = GIDConfiguration.init(clientID: "84117475166-h91t1926toh8e5dt7inivcob42rp7f8d.apps.googleusercontent.com")
         
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
           if error != nil || user == nil {
@@ -22,8 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("GOOGLE AUTH Show the app's signed-out state.", error?.localizedDescription ?? "", user ?? "")
           } else {
             // Show the app's signed-in state.
-            print("GOOGLE AUTH Show the app's signed-out state.", error?.localizedDescription ?? "", user ?? "")
+            print("GOOGLE AUTH Show the app's signed-in state.", error?.localizedDescription ?? "", user ?? "")
           }
+        }
+        
+        if let token = AccessToken.current, !token.isExpired {
+            print("TOKEN", token)
         }
         
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -64,7 +67,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
-

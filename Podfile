@@ -3,6 +3,8 @@ platform :ios, '9.0'
 def shared_pods
     pod 'FBSDKLoginKit'
     pod 'GoogleSignIn'
+    pod 'RxSwift'
+    pod 'RxCocoa'
 end
 
 target 'swift-calculator' do

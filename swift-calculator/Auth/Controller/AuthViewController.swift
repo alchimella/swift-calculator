@@ -30,9 +30,7 @@ class AuthViewController: UIViewController {
         view.addSubview(gidLoginButton)
         view.addSubview(fbLoginButton)
 
-        if let token = AccessToken.current, !token.isExpired {
-            print("TOKEN", token)
-        }
+        
     }
     
     @objc func gidSignIn() {
@@ -44,6 +42,9 @@ class AuthViewController: UIViewController {
 
             // If sign in succeeded, display the app's main content View.
             print("GOOGLE AUTH SUCCESS")
-          }
+            
+            let calculatorVC = CalculatorViewController.instantiate(fromAppStoryboard: .Calculator)
+            self.navigationController?.pushViewController(calculatorVC, animated: true)
+        }
     }
 }
