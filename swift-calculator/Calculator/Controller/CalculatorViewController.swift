@@ -56,6 +56,8 @@ class CalculatorViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        navigationItem.title = "PAGE 2"
         showOperationsHistoryButton.frame.size.height = sumButton.frame.height
     }
     

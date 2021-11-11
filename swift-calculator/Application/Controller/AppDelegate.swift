@@ -25,10 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           }
         }
         
-        if let token = AccessToken.current, !token.isExpired {
-            print("TOKEN", token)
-        }
-        
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true

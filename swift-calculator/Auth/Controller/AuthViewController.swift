@@ -13,6 +13,12 @@ class AuthViewController: UIViewController {
 
     let signInConfig = GIDConfiguration.init(clientID: "84117475166-h91t1926toh8e5dt7inivcob42rp7f8d.apps.googleusercontent.com")
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        navigationItem.title = "PAGE 1"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,7 +36,16 @@ class AuthViewController: UIViewController {
         view.addSubview(gidLoginButton)
         view.addSubview(fbLoginButton)
 
-        
+        NotificationCenter.default.addObserver(forName: .AccessTokenDidChange, object: nil, queue: OperationQueue.main) { (notification) in
+            
+            // Print out access token
+            print("FB Access Token: \(String(describing: AccessToken.current?.tokenString))")
+            
+            if let token = AccessToken.current, !token.isExpired {
+                let calculatorVC = CalculatorViewController.instantiate(fromAppStoryboard: .Calculator)
+                self.navigationController?.pushViewController(calculatorVC, animated: true)
+            }
+        }
     }
     
     @objc func gidSignIn() {
