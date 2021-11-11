@@ -12,6 +12,7 @@ import RxCocoa
 class CalculatorViewController: UIViewController {
     
     @IBOutlet weak var inputLabel: UILabel!
+    @IBOutlet weak var historyLabel: UILabel!
     @IBOutlet weak var zeroButton: UIButton!
     @IBOutlet weak var numberOneButton: UIButton!
     @IBOutlet weak var numberTwoButton: UIButton!
@@ -51,6 +52,7 @@ class CalculatorViewController: UIViewController {
     }
     
     private var inputData = BehaviorRelay<String>(value: "0")
+    private var history = BehaviorRelay<String>(value: "")
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -219,11 +221,17 @@ class CalculatorViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        history.observe(on: MainScheduler.instance)
+            .subscribe(onNext: { history in
+                self.historyLabel.text = history
+            })
+            .disposed(by: disposeBag)
+        
         sumButton.rx.tap
             .subscribe(onNext: { _ in
                 if let value = Double(self.inputData.value) {
                     self.firstValue = value
-                    self.inputData.accept("")
+                    self.inputData.accept("0")
                     self.operation = .sum
                 }
             })
@@ -233,7 +241,7 @@ class CalculatorViewController: UIViewController {
             .subscribe(onNext: { _ in
                 if let value = Double(self.inputData.value) {
                     self.firstValue = value
-                    self.inputData.accept("")
+                    self.inputData.accept("0")
                     self.operation = .subtract
                 }
             })
@@ -243,7 +251,7 @@ class CalculatorViewController: UIViewController {
             .subscribe(onNext: { _ in
                 if let value = Double(self.inputData.value) {
                     self.firstValue = value
-                    self.inputData.accept("")
+                    self.inputData.accept("0")
                     self.operation = .multiply
                 }
             })
@@ -253,7 +261,7 @@ class CalculatorViewController: UIViewController {
             .subscribe(onNext: { _ in
                 if let value = Double(self.inputData.value) {
                     self.firstValue = value
-                    self.inputData.accept("")
+                    self.inputData.accept("0")
                     self.operation = .divide
                 }
             })
@@ -289,6 +297,12 @@ class CalculatorViewController: UIViewController {
                         }
                     case .none:
                         break
+                    }
+                    
+                    if self.history.value.count == 0 {
+                        self.history.accept("\(first) \(self.operation.rawValue) \(second) \n = \(self.result ?? 0) \n")
+                    } else {
+                        self.history.accept(self.history.value + "\(first) \(self.operation.rawValue) \(second) \n = \(self.result ?? 0) \n")
                     }
                 }
             })
