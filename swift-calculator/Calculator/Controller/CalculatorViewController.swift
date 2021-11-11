@@ -277,33 +277,36 @@ class CalculatorViewController: UIViewController {
                     switch self.operation {
                     case .sum:
                         self.result = first + second
-                        self.inputData.accept("\(self.result ?? 0)")
+//                        self.inputData.accept("\(self.result ?? 0)")
                         self.firstValue = self.result
                     case .subtract:
                         self.result = first - second
-                        self.inputData.accept("\(self.result ?? 0)")
+//                        self.inputData.accept("\(self.result ?? 0)")
                         self.firstValue = self.result
                     case .multiply:
                         self.result = first * second
-                        self.inputData.accept("\(self.result ?? 0)")
+//                        self.inputData.accept("\(self.result ?? 0)")
                         self.firstValue = self.result
                     case .divide:
                         if second == 0 {
                             // ADD ALERT
                         } else {
                             self.result = first / second
-                            self.inputData.accept("\(self.result ?? 0)")
+//                            self.inputData.accept("\(self.result ?? 0)")
                             self.firstValue = self.result
                         }
                     case .none:
                         break
                     }
                     
-                    if self.history.value.count == 0 {
-                        self.history.accept("\(first) \(self.operation.rawValue) \(second) \n = \(self.result ?? 0) \n")
+                    // ADD EXTENSION to check if Double is Int
+                    if let res = self.result, floor(res) == res {
+                        self.inputData.accept("\(Int(self.result ?? 0))")
                     } else {
-                        self.history.accept(self.history.value + "\(first) \(self.operation.rawValue) \(second) \n = \(self.result ?? 0) \n")
+                        self.inputData.accept("\(self.result ?? 0)")
                     }
+                    
+                    self.setHistoryData(first, second)
                 }
             })
             .disposed(by: disposeBag)
@@ -313,6 +316,14 @@ class CalculatorViewController: UIViewController {
         if isEqualButtonTapped {
             isEqualButtonTapped = false
             inputData.accept("")
+        }
+    }
+    
+    private func setHistoryData(_ first: Double, _ second: Double) {
+        if self.history.value.count == 0 {
+            self.history.accept("\(first) \(self.operation.rawValue) \(second) \n = \(self.result ?? 0) \n")
+        } else {
+            self.history.accept(self.history.value + "\(first) \(self.operation.rawValue) \(second) \n = \(self.result ?? 0) \n")
         }
     }
 }

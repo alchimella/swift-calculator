@@ -24,6 +24,7 @@
 		62F277E627392A9B0079CD65 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F277E527392A9B0079CD65 /* AuthService.swift */; };
 		62F277E8273952810079CD65 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F277E7273952810079CD65 /* BaseNavigationController.swift */; };
 		62F277EB2739693C0079CD65 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F277EA2739693C0079CD65 /* UIColor+Extension.swift */; };
+		62F277F2273D44100079CD65 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F277F1273D440F0079CD65 /* Double+Extension.swift */; };
 		87C7FB8D318BF4E37339FA58 /* Pods_swift_calculator_swift_calculatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501379584CD0A8650D8C74B1 /* Pods_swift_calculator_swift_calculatorUITests.framework */; };
 		E550DAA12B56FC9841854E71 /* Pods_swift_calculatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26D4FBEAB31894D6F156DBE /* Pods_swift_calculatorTests.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,7 @@
 		62F277E527392A9B0079CD65 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		62F277E7273952810079CD65 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		62F277EA2739693C0079CD65 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		62F277F1273D440F0079CD65 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		908D184778EAB8F4E2C3A3C9 /* Pods-swift-calculatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-calculatorTests.release.xcconfig"; path = "Target Support Files/Pods-swift-calculatorTests/Pods-swift-calculatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		A26D4FBEAB31894D6F156DBE /* Pods_swift_calculatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_calculatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6C4D8C712E9BB4411D027F /* Pods-swift-calculator-swift-calculatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-calculator-swift-calculatorUITests.debug.xcconfig"; path = "Target Support Files/Pods-swift-calculator-swift-calculatorUITests/Pods-swift-calculator-swift-calculatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				62F277EA2739693C0079CD65 /* UIColor+Extension.swift */,
+				62F277F1273D440F0079CD65 /* Double+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				627C27B32733AE6100FE5F31 /* AuthModel.swift in Sources */,
 				627C27752733A94900FE5F31 /* AppDelegate.swift in Sources */,
 				627C27772733A94900FE5F31 /* SceneDelegate.swift in Sources */,
+				62F277F2273D44100079CD65 /* Double+Extension.swift in Sources */,
 				62F277E627392A9B0079CD65 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
