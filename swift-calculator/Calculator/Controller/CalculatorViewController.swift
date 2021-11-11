@@ -40,7 +40,7 @@ class CalculatorViewController: UIViewController {
     private var operation: Operations = .none
     private var historyData: [String] = []
     private var firstValue: Double?
-    private var result: Double?
+    private var operationResult: Double?
     private var isEqualButtonTapped: Bool = false
     
     enum Operations: String {
@@ -76,7 +76,7 @@ class CalculatorViewController: UIViewController {
             .subscribe(onNext: { _ in
                 self.inputData.accept("0")
                 self.operation = .none
-                self.result = nil
+                self.operationResult = nil
             })
             .disposed(by: disposeBag)
         
@@ -276,34 +276,27 @@ class CalculatorViewController: UIViewController {
                     
                     switch self.operation {
                     case .sum:
-                        self.result = first + second
-//                        self.inputData.accept("\(self.result ?? 0)")
-                        self.firstValue = self.result
+                        self.operationResult = first + second
+                        self.firstValue = self.operationResult
                     case .subtract:
-                        self.result = first - second
-//                        self.inputData.accept("\(self.result ?? 0)")
-                        self.firstValue = self.result
+                        self.operationResult = first - second
+                        self.firstValue = self.operationResult
                     case .multiply:
-                        self.result = first * second
-//                        self.inputData.accept("\(self.result ?? 0)")
-                        self.firstValue = self.result
+                        self.operationResult = first * second
+                        self.firstValue = self.operationResult
                     case .divide:
                         if second == 0 {
-                            // ADD ALERT
+                            self.presentAlert()
                         } else {
-                            self.result = first / second
-//                            self.inputData.accept("\(self.result ?? 0)")
-                            self.firstValue = self.result
+                            self.operationResult = first / second
+                            self.firstValue = self.operationResult
                         }
                     case .none:
                         break
                     }
                     
-                    // ADD EXTENSION to check if Double is Int
-                    if let res = self.result, floor(res) == res {
-                        self.inputData.accept("\(Int(self.result ?? 0))")
-                    } else {
-                        self.inputData.accept("\(self.result ?? 0)")
+                    if let result = self.operationResult {
+                        self.inputData.accept(result.isInteger())
                     }
                     
                     self.setHistoryData(first, second)
@@ -320,10 +313,23 @@ class CalculatorViewController: UIViewController {
     }
     
     private func setHistoryData(_ first: Double, _ second: Double) {
-        if self.history.value.count == 0 {
-            self.history.accept("\(first) \(self.operation.rawValue) \(second) \n = \(self.result ?? 0) \n")
-        } else {
-            self.history.accept(self.history.value + "\(first) \(self.operation.rawValue) \(second) \n = \(self.result ?? 0) \n")
+        
+        var result: String = ""
+        
+        if let res = self.operationResult {
+            result = res.isInteger()
         }
+        
+        if self.history.value.count == 0 {
+            self.history.accept("\(first.isInteger()) \(self.operation.rawValue) \(second.isInteger()) \n = \(result) \n")
+        } else {
+            self.history.accept(self.history.value + "\(first.isInteger()) \(self.operation.rawValue) \(second.isInteger()) \n = \(result) \n")
+        }
+    }
+    
+    private func presentAlert() {
+        let alert = UIAlertController(title: "Внимание!", message: "Деление на 0 невозможно", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

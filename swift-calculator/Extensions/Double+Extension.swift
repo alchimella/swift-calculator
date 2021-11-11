@@ -9,4 +9,7 @@ import Foundation
 
 extension Double {
     
+    func isInteger() -> String {
+        return floor(self) == self ? String(Int(self)) : String(self)
+    }
 }
