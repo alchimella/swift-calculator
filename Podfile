@@ -13,14 +13,5 @@ target 'swift-calculator' do
 
   # Pods for swift-calculator
   shared_pods
-  
-  target 'swift-calculatorTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'swift-calculatorUITests' do
-    # Pods for testing
-  end
 
 end

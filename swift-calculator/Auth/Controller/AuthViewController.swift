@@ -10,6 +10,8 @@ import FBSDKLoginKit
 import GoogleSignIn
 
 class AuthViewController: UIViewController {
+    
+    private let logger = Logger.shared
 
     let signInConfig = GIDConfiguration.init(clientID: "84117475166-h91t1926toh8e5dt7inivcob42rp7f8d.apps.googleusercontent.com")
     
@@ -37,13 +39,26 @@ class AuthViewController: UIViewController {
         view.addSubview(fbLoginButton)
 
         NotificationCenter.default.addObserver(forName: .AccessTokenDidChange, object: nil, queue: OperationQueue.main) { (notification) in
-            
-            // Print out access token
-            print("FB Access Token: \(String(describing: AccessToken.current?.tokenString))")
+
+            self.logger.setLog(type: .trace, message: "FB Access Token: \(String(describing: AccessToken.current?.tokenString))")
             
             if let token = AccessToken.current, !token.isExpired {
                 let calculatorVC = CalculatorViewController.instantiate(fromAppStoryboard: .Calculator)
                 self.navigationController?.pushViewController(calculatorVC, animated: true)
+            }
+            
+            let fbLoginManager : LoginManager = LoginManager()
+            fbLoginManager.logIn(permissions: [.email], viewController: self) { loginResult in
+                switch loginResult {
+                case .success(let granted, let declined, let token):
+                    self.logger.setLog(type: .info, message: "granted: \(granted), declined: \(declined), token: \(token)")
+                case .cancelled:
+                    self.logger.setLog(type: .warn, message: "Login: cancelled.")
+                case .failed(let error):
+                    self.logger.setLog(type: .error, message: "Login with error: \(error.localizedDescription)")
+                @unknown default:
+                    self.logger.setLog(type: .fatal, message: "FB login unexpected error")
+                }
             }
         }
     }
@@ -51,12 +66,11 @@ class AuthViewController: UIViewController {
     @objc func gidSignIn() {
         GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
             guard error == nil else {
-                print("GOOGLE AUTH ERROR", error?.localizedDescription)
+                self.logger.setLog(type: .error, message: "GOOGLE AUTH ERROR: \(error?.localizedDescription ?? "")")
                 return
             }
 
-            // If sign in succeeded, display the app's main content View.
-            print("GOOGLE AUTH SUCCESS")
+            self.logger.setLog(type: .info, message: "GOOGLE AUTH SUCCESS")
             
             let calculatorVC = CalculatorViewController.instantiate(fromAppStoryboard: .Calculator)
             self.navigationController?.pushViewController(calculatorVC, animated: true)

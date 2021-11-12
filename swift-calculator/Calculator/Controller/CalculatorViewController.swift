@@ -37,6 +37,8 @@ class CalculatorViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
+    private let logger = Logger.shared
+    
     private var operation: Operations = .none
     private var historyData: [String] = []
     private var firstValue: Double?
@@ -289,6 +291,7 @@ class CalculatorViewController: UIViewController {
                     case .divide:
                         if second == 0 {
                             self.presentAlert()
+                            self.logger.setLog(type: .warn, message: "Cannot divide by zero")
                         } else {
                             self.operationResult = first / second
                             self.firstValue = self.operationResult
