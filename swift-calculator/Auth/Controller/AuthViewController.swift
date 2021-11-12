@@ -46,19 +46,19 @@ class AuthViewController: UIViewController {
                 let calculatorVC = CalculatorViewController.instantiate(fromAppStoryboard: .Calculator)
                 self.navigationController?.pushViewController(calculatorVC, animated: true)
             }
-            
-            let fbLoginManager : LoginManager = LoginManager()
-            fbLoginManager.logIn(permissions: [.email], viewController: self) { loginResult in
-                switch loginResult {
-                case .success(let granted, let declined, let token):
-                    self.logger.setLog(type: .info, message: "granted: \(granted), declined: \(declined), token: \(token)")
-                case .cancelled:
-                    self.logger.setLog(type: .warn, message: "Login: cancelled.")
-                case .failed(let error):
-                    self.logger.setLog(type: .error, message: "Login with error: \(error.localizedDescription)")
-                @unknown default:
-                    self.logger.setLog(type: .fatal, message: "FB login unexpected error")
-                }
+        }
+        
+        let fbLoginManager : LoginManager = LoginManager()
+        fbLoginManager.logIn(permissions: [.email], viewController: self) { loginResult in
+            switch loginResult {
+            case .success(let granted, let declined, let token):
+                self.logger.setLog(type: .info, message: "granted: \(granted), declined: \(declined), token: \(token)")
+            case .cancelled:
+                self.logger.setLog(type: .warn, message: "Login: cancelled.")
+            case .failed(let error):
+                self.logger.setLog(type: .error, message: "Login with error: \(error.localizedDescription)")
+            @unknown default:
+                self.logger.setLog(type: .fatal, message: "FB login unexpected error")
             }
         }
     }
