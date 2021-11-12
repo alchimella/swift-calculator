@@ -19,7 +19,6 @@
 		627C27BA27351D0C00FE5F31 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627C27B927351D0B00FE5F31 /* CalculatorViewController.swift */; };
 		627C27BC27351D2D00FE5F31 /* Calculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 627C27BB27351D2D00FE5F31 /* Calculator.storyboard */; };
 		627C27BF273528E700FE5F31 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627C27BE273528E700FE5F31 /* AppStoryboard.swift */; };
-		62F277E627392A9B0079CD65 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F277E527392A9B0079CD65 /* AuthService.swift */; };
 		62F277E8273952810079CD65 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F277E7273952810079CD65 /* BaseNavigationController.swift */; };
 		62F277EB2739693C0079CD65 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F277EA2739693C0079CD65 /* UIColor+Extension.swift */; };
 		62F277F2273D44100079CD65 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F277F1273D440F0079CD65 /* Double+Extension.swift */; };
@@ -66,7 +65,6 @@
 		627C27B927351D0B00FE5F31 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		627C27BB27351D2D00FE5F31 /* Calculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calculator.storyboard; sourceTree = "<group>"; };
 		627C27BE273528E700FE5F31 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
-		62F277E527392A9B0079CD65 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		62F277E7273952810079CD65 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		62F277EA2739693C0079CD65 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		62F277F1273D440F0079CD65 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 		627C27A42733ACBA00FE5F31 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				62F277E527392A9B0079CD65 /* AuthService.swift */,
 				62F277F3273D62040079CD65 /* Logger.swift */,
 			);
 			path = Services;
@@ -554,7 +551,6 @@
 				627C27752733A94900FE5F31 /* AppDelegate.swift in Sources */,
 				627C27772733A94900FE5F31 /* SceneDelegate.swift in Sources */,
 				62F277F2273D44100079CD65 /* Double+Extension.swift in Sources */,
-				62F277E627392A9B0079CD65 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
